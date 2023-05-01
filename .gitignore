@@ -9,3 +9,4 @@ portfolio-app/venv
 portfolio-app/.idea
 weather-api/venv
 weather-api/.idea
+weather-api/.ipynb_checkpoints
