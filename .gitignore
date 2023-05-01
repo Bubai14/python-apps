@@ -1,0 +1,11 @@
+.DS_Store
+invoice-generation/venv
+invoice-generation/.idea
+news-api-email/venv
+news-api-email/.idea
+pdf-template/venv
+pdf-template/.idea
+portfolio-app/venv
+portfolio-app/.idea
+weather-api/venv
+weather-api/.idea
