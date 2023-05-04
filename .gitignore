@@ -12,3 +12,4 @@ weather-api/.idea
 weather-api/.ipynb_checkpoints
 weather-forecast/venv
 weather-forecast/.idea
+weather-forecast/__pycache__
