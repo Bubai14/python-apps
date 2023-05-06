@@ -13,3 +13,6 @@ weather-api/.ipynb_checkpoints
 weather-forecast/venv
 weather-forecast/.idea
 weather-forecast/__pycache__
+sentiment-analysis/.ipynb_checkpoints
+sentiment-analysis/venv
+sentiment-analysis/.idea
