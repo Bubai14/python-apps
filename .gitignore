@@ -16,3 +16,5 @@ weather-forecast/__pycache__
 sentiment-analysis/.ipynb_checkpoints
 sentiment-analysis/venv
 sentiment-analysis/.idea
+webcam-email/venv
+webcam-email/.idea
