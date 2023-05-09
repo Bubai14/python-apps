@@ -18,3 +18,4 @@ sentiment-analysis/venv
 sentiment-analysis/.idea
 webcam-email/venv
 webcam-email/.idea
+webcam-email/__pycache__
