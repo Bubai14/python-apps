@@ -1,7 +1,9 @@
+import time
+
 import requests
 import selectorlib
+import db
 
-# import selectorlib
 
 URL = "https://programmer100.pythonanywhere.com/tours/"
 HEADERS = {
@@ -31,10 +33,46 @@ def extract(page_source):
         The extracted content
     """
     extractor = selectorlib.Extractor.from_yaml_file("extract.yaml")
-    print(extractor.extract(page_source))
+    return extractor.extract(page_source)['tours']
+
+
+def store(extracted):
+    """
+    Store the extracted value to the database
+    :param extracted:
+        extracted value
+    :return:
+    """
+    row = extracted.split(',')
+    row = [item.strip() for item in row]
+    db.save(row)
+
+
+def read(extracted):
+    """
+    Read the values from database
+    :return:
+        the tours list
+    """
+    row = extracted.split(',')
+    row = [item.strip() for item in row]
+    return db.get(row)
+
+
+def message():
+    print("Done!!!")
 
 
 if __name__ == "__main__":
-    source = scape(URL)
-    extract(source)
+    while True:
+        source = scape(URL)
+        extracted = extract(source)
+        if extracted != "No upcoming tours":
+            content = read(extracted)
+            if not content:
+                store(extracted)
+                message()
+        time.sleep(2)
+
+
 
