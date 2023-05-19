@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 df = pd.read_csv('hotels.csv', dtype={"id": str})
 df_cards = pd.read_csv('cards.csv', dtype=str).to_dict(orient="records")
 df_card_security = pd.read_csv('card_security.csv', dtype=str)
@@ -24,6 +23,12 @@ class Hotel:
         else:
             return False
 
+    # Classmethod - static method in java. These methods are not related to any specific hotel instance,
+    # Its addresses all the hotels. Classmethods has to be annotated with @classmethod and pass cls argument.
+    @classmethod
+    def get_hotel_count(cls, data):
+        return len(data)
+
 
 class ReservationTicket:
 
@@ -35,10 +40,22 @@ class ReservationTicket:
         content = f"""
         Thank you for your reservation!
         Here are your booking details:
-        Name: {self.customer_name}
+        Name: {self.decorated_customer_name}
         Hotel: {self.hotel.name}
         """
         print(content)
+
+    # Property can be called just like variables without ()
+    @property
+    def decorated_customer_name(self):
+        cust_name = self.customer_name.strip()
+        return cust_name.title()
+
+    # Static method are similar to class methods which is related to the entire class
+    # rather than the instances.
+    @staticmethod
+    def convert(amount):
+        return amount * 81.12
 
 
 class CreditCard:
@@ -67,7 +84,7 @@ class SecuredCreditCard(CreditCard):
 if __name__ == "__main__":
     hotel_id = input("Enter the id of the hotel:")
     hotel = Hotel(hotel_id)
-
+    print("Total hotels:", Hotel.get_hotel_count(data=df))
     if hotel.available():
         credit_card = SecuredCreditCard("1234")
         if credit_card.validate(expiration="12/26", holder="JOHN SMITH", cvc="123"):
@@ -82,4 +99,3 @@ if __name__ == "__main__":
             print("There is a problem with your payment")
     else:
         print("Hotel is completely sold out!!")
-
