@@ -26,3 +26,6 @@ hotel-booking/venv
 hotel-booking/.idea
 student-mgmt-system-desktop/venv
 student-mgmt-system-desktop/.idea
+chatbot-gpt/venv
+chatbot-gpt/.idea
+chatbot-gpt/__pycache__
