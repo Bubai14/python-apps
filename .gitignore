@@ -29,3 +29,5 @@ student-mgmt-system-desktop/.idea
 chatbot-gpt/venv
 chatbot-gpt/.idea
 chatbot-gpt/__pycache__
+job-application/venv
+job-application/.idea
