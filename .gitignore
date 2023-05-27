@@ -31,3 +31,6 @@ chatbot-gpt/.idea
 chatbot-gpt/__pycache__
 job-application/venv
 job-application/.idea
+job-application-django/venv
+job-application-django/.idea
+job-application-django/__pycache__
