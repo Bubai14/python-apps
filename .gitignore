@@ -34,3 +34,5 @@ job-application/.idea
 job-application-django/venv
 job-application-django/.idea
 job-application-django/__pycache__
+django-restaurant-app/venv
+django-restaurant-app/.idea
