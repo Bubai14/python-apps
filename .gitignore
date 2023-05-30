@@ -36,3 +36,5 @@ job-application-django/.idea
 job-application-django/__pycache__
 django-restaurant-app/venv
 django-restaurant-app/.idea
+django-restaurant-app/restaurant_menu/__pycache__
+django-restaurant-app/mysite/__pycache__/urls.cpython-310.pyc
